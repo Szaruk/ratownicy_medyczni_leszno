@@ -1,0 +1,141 @@
+.about-us-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.about-us-main .person-container {
+  padding: 5%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about-us-main .person-container .about-info {
+  border: solid #EC2A32 3px;
+  width: 40vw;
+  padding: 20px;
+}
+
+.about-us-main .person-container .about-info h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.about-us-main .person-container .about-info p {
+  line-height: 1.5em;
+  word-spacing: 0.1em;
+}
+
+.about-us-main .person-container .about-photo {
+  margin-left: 5%;
+  width: 35vw;
+  height: 25vw;
+  border: solid #D0AC69 3px;
+  border-radius: 30px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about-us-main .person-container .about-photo img {
+  width: 100%;
+}
+
+.about-us-main .person-container:nth-child(2) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.about-us-main .person-container:nth-child(2) .about-photo:nth-child(2) {
+  margin-right: 5%;
+}
+
+.about-us-main .person-container:nth-child(2) .about-photo:nth-child(2) img {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+
+.about-us-main .person-container:nth-child(3) .about-photo img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+@media screen and (max-width: 1220px) {
+  .about-us-main .person-container .about-info {
+    width: 50vw;
+  }
+  .about-us-main .person-container .about-photo {
+    width: 40vw;
+    height: 30vw;
+  }
+  .about-us-main .person-container:nth-child(2) .about-photo:nth-child(2) {
+    width: 40vw;
+    height: 30vw;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .about-us-main .person-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about-us-main .person-container .about-info {
+    width: 100%;
+  }
+  .about-us-main .person-container .about-photo {
+    margin-top: 5%;
+    width: 60vw;
+    height: 50vw;
+  }
+  .about-us-main .person-container:nth-child(2) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about-us-main .person-container:nth-child(2) .about-photo:nth-child(2) {
+    width: 60vw;
+    height: 50vw;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .about-us-main .person-container .about-photo {
+    width: 70vw;
+    height: 60vw;
+  }
+  .about-us-main .person-container:nth-child(2) .about-photo:nth-child(2) {
+    width: 70vw;
+    height: 60vw;
+  }
+  .person-container:nth-child(3) .about-photo:nth-child(2) img {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+}
+/*# sourceMappingURL=about_us.css.map */

@@ -1,0 +1,66 @@
+@import "./colors";
+
+.main-contact {
+  min-height: 51vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .info-container {
+    background-color: $secondary-color;
+    width: 50%;
+    padding: 20px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+
+    h3 {
+      line-height: 5.5rem;
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      img {
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 984px) {
+  .main-contact {
+    .info-container {
+      width: 75%;
+    }
+  }
+}
+
+@media screen and (max-width: 623px) {
+  .main-contact {
+    .info-container {
+      width: 90%;
+      font-size: 0.8em;
+    }
+  }
+}
+
+@media screen and (max-width: 373px) {
+  .main-contact {
+    .info-container {
+      width: 90%;
+      font-size: 0.8em;
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      h3 {
+        line-height: 3.5em;
+      }
+    }
+  }
+}

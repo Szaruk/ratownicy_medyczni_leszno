@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Author" content="Krzysztof Chodziak" />
+    <meta
+      name="description"
+      content="Blog ratownictwa medycznego gdzie dowiesz się o wydarzeniach ratowników medycznych w Lesznie"
+    />
+    <title>Ratownicy Medyczni Leszno</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/pagination.css' %}" />
+    {% block link %}{% endblock %}
+    <link rel="Icon" href="{% static 'img/logo-ico.ico' %}" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left-side">
+        <div id="logo">
+          <a href="{% url 'blog:main_page' %}"
+            ><img
+              src="{% static 'img/logo.png' %}"
+              alt="Logo ratownictwa medycznego"
+          /></a>
+        </div>
+        <div id="resp-logo">
+          <a href="{% url 'blog:main_page' %}"
+            ><img
+              src="{% static 'img/resp-logo.png' %}"
+              alt="Logo ratownictwa medycznego"
+          /></a>
+        </div>
+      </div>
+      <div class="header-right-side">
+        <nav>
+          <div class="nav-left">
+            <ul class="nav-left-list">
+              <li class="nav-left-list-element">
+                <img
+                  src="{% static 'img/Icon material-group.png' %}"
+                  alt="ikona o nas"
+                /><a href="{% url 'blog:o-nas'%}">O nas</a>
+              </li>
+              <li class="nav-left-list-element">
+                <img
+                  src="{% static 'img/Icon material-school.png' %}"
+                  alt="ikona szkolenia"
+                /><a href="{% url 'blog:szkolenia' %}"> Szkolenia</a>
+              </li>
+            </ul>
+          </div>
+          <div class="nav-right">
+            <ul class="nav-right-list">
+              <li class="nav-right-list-element">
+                <img
+                  src="{% static 'img/Icon ionic-md-photos.png' %}"
+                  alt="ikona statystyki"
+                /><a href="{% url 'blog:statystyki' %}"> Statystyki</a>
+              </li>
+              <li class="nav-right-list-element">
+                <img
+                  src="{% static 'img/Icon metro-contacts-mail.png' %}"
+                  alt="ikona kontakt"
+                /><a href="{% url 'blog:kontakt' %}"> Kontakt</a>
+              </li>
+            </ul>
+          </div>
+          <div class="hamburger-image">
+            <img src="{% static 'img/hamburger.png' %}" alt="hamburger resp" />
+          </div>
+          <div class="hamburger-resp">
+            <div class="exit-hamburger-list">
+              <img
+                src="{% static 'img/exit.png' %}"
+                alt="exit-hamburger-list"
+              />
+            </div>
+            <ul class="hamburger-resp-list">
+              <li class="hamburger-resp-list-element">
+                <a href="{% url 'blog:o-nas'%}">O nas</a>
+              </li>
+              <hr />
+              <li class="hamburger-resp-list-element">
+                <a href="{% url 'blog:szkolenia' %}">Szkolenia</a>
+              </li>
+              <hr />
+              <li class="hamburger-resp-list-element">
+                <a href="{% url 'blog:statystyki' %}">Statystyki</a>
+              </li>
+              <hr />
+              <li class="hamburger-resp-list-element">
+                <a href="{% url 'blog:kontakt' %}">Kontakt</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    {% block content %}
+    <main>
+      <section class="begin-info">
+        <div class="begin-info-left">
+          <div class="begin-info-left-text">
+            <h1>Ratownicy Medyczni Leszno</h1>
+          </div>
+          {% for main_infos in main_info %}
+          <p>{{ main_infos.MainText }}</p>
+          {% endfor %}
+        </div>
+        <div class="begin-info-right">
+          <div class="baner-img">
+            <img src="{% static 'img/baner_3.jpg' %}" alt="baner" />
+          </div>
+        </div>
+      </section>
+
+      <section class="new-post-container">
+        <div class="new-post-container-up">
+          <div class="new-post-container-up-text"><h1>Najnowsze posty</h1></div>
+        </div>
+        <div class="new-post-container-down">
+          <div class="new-post-container-down-left">
+            <div class="important-post">
+              <a href="{{ main_post.get_absolute_url }}">
+                <img
+                  class="important-post-image"
+                  src="{{ main_post.imagePost.url }}"
+                  alt=""
+                />
+                <div class="important-post-text">
+                  {{ main_post.text_post|truncatewords:11|safe}}
+                  <a href="{{ main_post.get_absolute_url }}"
+                    ><div class="important-post-text-data">
+                      {{ main_post.publish|date:'d-m-Y' }}
+                    </div></a
+                  >
+                  <a href="{{ main_post.get_absolute_url }}"
+                    ><div class="important-post-text-read-more">
+                      Czytaj więcej
+                      <img
+                        class="read-more-image"
+                        src="{% static 'img/read-more.png' %}"
+                        alt=""
+                      />
+                    </div>
+                  </a>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="new-post-container-down-right">
+            {% for post in posts %}
+            <a href="{{ post.get_absolute_url }}">
+              <div class="another-post">
+                <img src="{{ post.imagePost.url }}" alt="" />
+                <div class="another-post-text">
+                  {{ post.text_post|truncatewords:10|safe }}
+                </div>
+              </div>
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="new-post-container-more-post">
+          <a href="{% url 'blog:posty' %}"
+            ><div class="all-post-button">
+              <p>Wszystkie posty</p>
+              <img
+                src="{% static 'img/read-more.png' %}"
+                alt="ikona strzałki"
+              /></div
+          ></a>
+        </div>
+      </section>
+
+      <section class="about-us-container">
+        <div class="about-us-container-info-up">
+          {% for info_section_titles in info_section_title %}
+            <h1>{{info_section_titles.SectionTitle}}</h1>
+          {% endfor %}
+          {% regroup info_section_details by InfoSection as section_list %}
+          {%for info_section_detail in section_list %}
+          <h3>{{ info_section_detail.grouper }}</h3>
+          <ul>
+            {% for text in info_section_detail.list %}
+            <li>{{ text }}</li>
+            {% endfor %}
+          </ul>
+          {% endfor %}
+      </section>
+      <section class="statistics">
+        <div class="statistics-up-title">
+          <h1>Statystyki</h1>
+        </div>
+        <div class="statistics-down-container">
+          {% for statistic in statistics %}
+          <div class="statistics-down-container-box">
+            <img
+              src="{{ statistic.statisticsImage.url }}"
+              alt="sierpień statystyki"
+            />
+          </div>
+          {% endfor %}
+        </div>
+        <div class="statistics-more">
+          <a href="{% url 'blog:statystyki' %}"
+            ><div class="all-statistics">
+              <p>Wszystkie statystyki</p>
+              <img
+                src="{% static 'img/read-more.png' %}"
+                alt="ikona strzałki"
+              /></div
+          ></a>
+        </div>
+      </section>
+    </main>
+    {% endblock %}
+    <footer id="contact" class="contact-footer">
+      <h3>Ratownicy Medyczni Leszno &copy 2021</h3>
+    </footer>
+    <script src="{% static 'js/app.js' %}"></script>
+  </body>
+</html>

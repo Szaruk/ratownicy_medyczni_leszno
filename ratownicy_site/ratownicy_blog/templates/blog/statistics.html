@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/statistics.css' %}">
+{% endblock %}
+{% block content %}
+    <main class="statistics-main">
+        {% for statistics in statistics_list %}
+        <div class="statistics-main-image"><img src="{{ statistics.statisticsImage.url }}" alt="{{ stattistics.title }}"></div>
+        {% endfor %}
+    </main>
+    {% include "pagination.html" with page=statistics_list %}
+{% endblock %}

@@ -1,0 +1,130 @@
+@import "./colors";
+
+.about-us-main {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .person-container {
+    padding: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .about-info {
+      border: solid $primary-color 3px;
+      width: 40vw;
+      padding: 20px;
+      h2 {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      p {
+        line-height: 1.5em;
+        word-spacing: 0.1em;
+      }
+    }
+    .about-photo {
+      margin-left: 5%;
+      width: 35vw;
+      height: 25vw;
+      border: solid $secondary-color 3px;
+      border-radius: 30px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .person-container:nth-child(2) {
+    flex-direction: row-reverse;
+    .about-photo:nth-child(2) {
+      margin-right: 5%;
+      img {
+        transform: scale(1.4);
+      }
+    }
+  }
+
+  .person-container:nth-child(3) {
+    .about-photo {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .about-us-main {
+    .person-container {
+      .about-info {
+        width: 50vw;
+      }
+      .about-photo {
+        width: 40vw;
+        height: 30vw;
+      }
+    }
+    .person-container:nth-child(2) {
+      .about-photo:nth-child(2) {
+        width: 40vw;
+        height: 30vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .about-us-main {
+    .person-container {
+      flex-direction: column;
+      .about-info {
+        width: 100%;
+      }
+      .about-photo {
+        margin-top: 5%;
+        width: 60vw;
+        height: 50vw;
+      }
+    }
+    .person-container:nth-child(2) {
+      flex-direction: column;
+      .about-photo:nth-child(2) {
+        width: 60vw;
+        height: 50vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .about-us-main {
+    .person-container {
+      .about-photo {
+        width: 70vw;
+        height: 60vw;
+      }
+    }
+
+    .person-container:nth-child(2) {
+      .about-photo:nth-child(2) {
+        width: 70vw;
+        height: 60vw;
+      }
+    }
+  }
+
+  .person-container:nth-child(3) {
+    .about-photo:nth-child(2) {
+      img {
+        transform: scale(1.3);
+      }
+    }
+  }
+}

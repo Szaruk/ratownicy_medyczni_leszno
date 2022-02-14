@@ -1,0 +1,26 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/all-posts.css'%}">
+{% endblock %}
+{% block content %}
+<main class="all-post-main">
+      <section class="all-post-main-container">
+          {% for all_training in training_posts %}
+                <div class="all-post-main-container-box">
+                    <div class="all-post-main-container-box-image"><img src="{{ all_training.imagePost.url }}" alt=""></div>
+                    <div class="all-post-main-container-box-right">
+                        <div class="box-right-text">
+                                {{ all_training.text_post|truncatewords:15|safe}}
+                        </div>
+                        <div class="box-right-down">
+                            <div class="box-right-down-date">{{ all_training.publish|date:'d-m-Y' }}</div>
+                            <a href="{{ all_training.get_absolute_url }}"><div class="box-right-down-read-more">Czytaj więcej<img src="{% static 'img/read-more.png' %}"></div></a>
+                        </div>
+                    </div>
+                </div>
+          {% endfor %}
+      </section>
+  </main>
+    {% include "pagination.html" with page=training_posts %}
+{% endblock %}

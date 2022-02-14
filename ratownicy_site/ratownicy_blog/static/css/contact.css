@@ -1,0 +1,71 @@
+.main-contact {
+  min-height: 51vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main-contact .info-container {
+  background-color: #D0AC69;
+  width: 50%;
+  padding: 20px;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 1.2em;
+  color: white;
+}
+
+.main-contact .info-container h3 {
+  line-height: 5.5rem;
+}
+
+.main-contact .info-container .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main-contact .info-container .info img {
+  padding-right: 5px;
+}
+
+@media screen and (max-width: 984px) {
+  .main-contact .info-container {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 623px) {
+  .main-contact .info-container {
+    width: 90%;
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 373px) {
+  .main-contact .info-container {
+    width: 90%;
+    font-size: 0.8em;
+  }
+  .main-contact .info-container h2 {
+    margin-bottom: 10px;
+  }
+  .main-contact .info-container h3 {
+    line-height: 3.5em;
+  }
+}
+/*# sourceMappingURL=contact.css.map */

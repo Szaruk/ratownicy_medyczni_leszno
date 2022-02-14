@@ -1,0 +1,35 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/post-details.css' %}" />
+{% endblock %}
+{% block content %}
+<main class="post-details-main">
+        <div class="post-details-main-up">
+          <div class="post-image-box">
+            <div class="box-image">
+              <img src="{{ post.imagePost.url }}" alt="" />
+            </div>
+          </div>
+        </div>
+        <article>
+          <div class="post-details-main-middle">
+            <div class="post-details-text">
+              <p>
+                {{ post.text_post|safe }}
+              </p>
+            </div>
+          </div>
+        </article>
+      <div class="post-details-main-down">
+        <div class="post-detail-image-box">
+            {% for photo in photos %}
+              <div class="post-details-image">
+                <img src="{{ photo.images.url }}" alt="" />
+              </div>
+            {% endfor %}
+        </div>
+      </div>
+
+    </main>
+{% endblock %}

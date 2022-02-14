@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}" />
+{% endblock %}
+{% block content %}
+<main class="main-contact">
+      <div class="info-container">
+        <h2>Skontaktuj się z nami</h2>
+        <span class="info">
+          <img src="{% static 'img/mail-icon.png' %}" alt="" />
+          <h3>ratownicymedycznileszno@gmail.com</h3>
+        </span>
+        <h2>Zapraszamy również na facebooka</h2>
+        <a
+          class="info"
+          href="https://www.facebook.com/Ratownicy-Medyczni-Leszno-111681707158655"
+          ><img src="{% static 'img/facebook-icon.png' %}" alt="" />
+          <h3>Ratownicy Medyczni Leszno</h3></a
+        >
+      </div>
+</main>
+{% endblock %}

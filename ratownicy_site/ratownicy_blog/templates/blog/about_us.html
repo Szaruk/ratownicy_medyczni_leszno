@@ -1,0 +1,18 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/about_us.css' %}" />
+{% endblock %}
+{% block content %}
+    <main class="about-us-main">
+      {% for person in person_list %}
+      <div class="person-container">
+        <div class="about-info">
+          <h2>{{person.name}}</h2>
+          {{person.description|safe}}
+        </div>
+        <div class="about-photo"><img src="{{ person.photo.url }}" alt="" /></div>
+      </div>
+      {% endfor %}
+    </main>
+{% endblock %}

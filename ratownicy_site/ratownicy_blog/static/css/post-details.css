@@ -1,0 +1,191 @@
+p>a{
+color: blue;
+text-decoration: underline;
+}
+
+.post-details-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 53vh;
+}
+
+.post-details-main-up {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px;
+}
+
+.post-details-main-up .post-image-box {
+  width: 35%;
+  max-height: 25vw;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.post-details-main-up .post-image-box::before {
+  content: "";
+  border: solid #D0AC69 3px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 5%;
+  left: -10%;
+  z-index: -1;
+  border-radius: 30px;
+}
+
+.post-details-main-up .box-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.post-details-main-up .box-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.post-details-main-middle {
+  -webkit-box-flex: 0.1;
+      -ms-flex: 0.1;
+          flex: 0.1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 30px;
+}
+
+.post-details-main-middle .post-details-text {
+  border-top: solid #D0AC69 3px;
+  border-bottom: solid #D0AC69 3px;
+  width: 60%;
+  padding-left: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.post-details-main-middle .post-details-text p {
+  letter-spacing: 0.05rem;
+  line-height: 2.5rem;
+}
+
+.post-details-main-down {
+  margin-top: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.post-details-main-down .post-detail-image-box {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.post-details-main-down .post-detail-image-box .post-details-image {
+  border: solid #D0AC69 3px;
+  background-color: #D0AC69;
+  width: 30%;
+  max-height: 20vw;
+  overflow: hidden;
+  margin: 10px;
+  border-radius: 30px;
+  display:flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.post-details-main-down .post-detail-image-box .post-details-image img {
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.post-details-main-down .post-detail-image-box .post-details-image:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1400px) {
+  .post-details-main-up .post-image-box {
+    width: 50%;
+    max-height: 35vw;
+  }
+  .post-details-main-middle .post-details-text {
+    width: 70%;
+  }
+  .post-details-main-down .post-detail-image-box .post-details-image {
+    width: 40%;
+    max-height: 25vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .post-details-main-up .post-image-box {
+    width: 65%;
+    max-height: 45vw;
+  }
+  .post-details-main-middle .post-details-text {
+    width: 70%;
+  }
+  .post-details-main-down .post-detail-image-box .post-details-image {
+    width: 70%;
+    max-height: 45vw;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .post-details-main-up .post-image-box {
+    width: 90%;
+    max-height: 60vw;
+  }
+  .post-details-main-middle .post-details-text {
+    width: 90%;
+  }
+  .post-details-main-middle .post-details-text p {
+    font-size: 0.8em;
+  }
+  .post-details-main-down .post-detail-image-box .post-details-image {
+    width: 80%;
+    max-height: 50vw;
+  }
+}
+/*# sourceMappingURL=post-details.css.map */
